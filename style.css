@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0a0125;
+  color: #fff;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 15px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.4s;
+  z-index: 99;
+  background: rgba(0,0,0,0.15);
+  backdrop-filter: blur(6px);
+}
+
+nav.scrolled {
+  background: rgba(0, 255, 245, 0.12);
+  box-shadow: 0 0 15px #00fff5;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00fff5;
+  text-shadow: 0 0 12px #00fff5;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e0e0e0;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: #00fff5;
+  text-shadow: 0 0 10px #00fff5;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  background: radial-gradient(circle at top, #120042, #000015);
+}
+
+.hero h1 {
+  font-size: 55px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 15px #6a00ff;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 28px;
+  color: #ccccff;
+}
+
+button {
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #00fff5, #6a00ff);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.4s;
+  box-shadow: 0 0 15px #00fff5;
+}
+
+button:hover {
+  box-shadow: 0 0 25px #6a00ff;
+  transform: translateY(-2px);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #00fff5;
+  transition: 0.4s;
+  box-shadow: 0 0 6px #00fff5;
+}
+
+/* Mobile Nav */
+@media(max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(0, 255, 245, 0.05);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease;
+  }
+
+  .nav-links.active {
+    height: 200px;
+  }
+}
